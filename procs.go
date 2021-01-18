@@ -1,12 +1,7 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"regexp"
-	"strconv"
-	"strings"
 	"github.com/zhengyi13/procs/procdata"
 )
 

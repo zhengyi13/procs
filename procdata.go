@@ -1,6 +1,16 @@
 package procdata
 
 
+import (
+	"bufio"
+	"fmt"
+	"os"
+	"regexp"
+	"strconv"
+	"strings" 
+)
+
+
 type proc struct {
 	pid int
 	ppid int
