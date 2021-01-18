@@ -30,7 +30,10 @@ func GetParentPid(pid int) (ppid int, err error) {
 		t := scanner.Text()
  		if matched, _ := regexp.MatchString(`^PPid`, t); matched != false {
 			s := strings.Split(t, ":")
-			ppid, _ = strconv.Atoi(strings.TrimSpace(s[1]))
+			ppid, err = strconv.Atoi(strings.TrimSpace(s[1]))
+			if err != nil {
+				return 0, err
+			}
 		}
  	}
 
@@ -50,7 +53,10 @@ func GetMyPid() (pid int, err error) {
 		t := scanner.Text()
  		if matched, _ := regexp.MatchString(`^Pid`, t); matched != false {
 			s := strings.Split(t, ":")
-			pid, _ = strconv.Atoi(strings.TrimSpace(s[1]))
+			pid, err = strconv.Atoi(strings.TrimSpace(s[1]))
+			if err != nil {
+				return 0, err
+			}
 		}
 	}
 
