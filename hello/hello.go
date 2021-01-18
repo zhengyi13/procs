@@ -3,5 +3,6 @@ package hello
 import "fmt"
 
 func Hello(name string) string {
-	fmt.Printf("Hello, %s!", name)
+	greeting := fmt.Sprintf("Hello, %s!", name)
+	return greeting
 }
